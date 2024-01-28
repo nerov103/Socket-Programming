@@ -12,9 +12,18 @@ FTP >is used for file transfe
 
 -----------------------------------------------
 
+3, Can you connect to any computer in the world with python socket?
 
+======================================================================
+socket.AF_INET > use IPv4 addresses / used for the first argument to socket()
 
+Address families can be > IPv4, IPv6, VPN-IPv4, multicast, or unicast.
 
+sock.connect((host, port))
+host: The hostname or IP address of the server you want to connect to.
+port: The port number on which the server is listening for connections
 
+sock.bind(('', port))
+Client sockets also have a port number. But we won't say that. The operating system will assign any port as desired.
 
 

@@ -1,0 +1,33 @@
+Here are the most important methods specifically for server-side socket programming in Python
+===================================================================
+1.socket.socket(socket.AF_INET, socket.SOCK_STREAM):
+
+Creates a new socket object, typically using TCP (SOCK_STREAM) for reliable connections.
+
+2.socket.bind((host, port)):
+
+Binds the socket to a specific IP address and port on the server, allowing it to listen for incoming connections on that port.
+
+3.socket.listen(backlog):
+
+Puts the socket into listening mode, accepting incoming connection requests.
+The backlog argument specifies the maximum number of pending connections to queue.
+
+4.socket.accept():
+
+Accepts a pending connection request from a client.
+Returns a new socket object and the client's address, used for communication with that specific client
+
+5.recv(buffer_size):
+
+Receives data from the connected client socket.
+The buffer_size argument specifies the maximum amount of data to receive at a time.
+
+6.send(data):
+
+Sends data back to the connected client socket.
+
+7.close():
+
+Closes the socket, releasing resources and ending the connection.
+
