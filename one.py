@@ -15,7 +15,6 @@ while True:
         s.close()
         break
 
-    
 
 
 
