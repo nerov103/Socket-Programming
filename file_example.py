@@ -17,3 +17,4 @@ if main_input[0]=="uplod":
 print(main_input)
 print(type(main_input))
 
+

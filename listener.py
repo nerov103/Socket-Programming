@@ -1,5 +1,5 @@
 import socket
-
+import json
 
 
 class back:
@@ -17,11 +17,15 @@ class back:
 
 
     def send_client(self, data):
-        listenr.connected.send(data)
+        json_data = json.dumps(data)
+        encode_data = json_data.encode("utf-8")
+        listenr.connected.send(encode_data)
 
 
     def reciv_data(self):
-        return listenr.connected.recv(1024).decode("UTF-8")
+        json_data = self.connected.recv(1024)
+        decode_data = json_data.decode("utf-8")
+        return json.loads(decode_data)
 
 
     def remote_control(self, command):
@@ -33,8 +37,9 @@ class back:
         '''all function run if while True'''
         while True:
             cmd = input(">>")
-
+            cmd = cmd.split()
             result = self.remote_control(cmd)
+
             print(result)   
 
 
