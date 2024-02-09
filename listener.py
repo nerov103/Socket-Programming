@@ -34,8 +34,9 @@ class back:
     
     def file_download(self, name, contnd):
         with open(name, 'wb') as file:
-            file.write(contnd)
+            file.write(contnd.encode("utf-8"))  # Encode as bytes
             return "Download Successfull!"
+
             
     def run(self):
         '''all function run if while True'''
