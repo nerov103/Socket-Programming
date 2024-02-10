@@ -1,3 +1,0 @@
-Hello Today ima show 
-how to read a file use python socket programming!
-thanks!
