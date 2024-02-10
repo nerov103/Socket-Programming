@@ -24,8 +24,8 @@ class back:
 
     def reciv_data(self):
         json_data = self.connected.recv(1024)
-        decode_data = json_data.decode("utf-8")
-        return json.loads(decode_data)
+        # decode_data = json_data.decode("utf-8")
+        return json.loads(json_data)
 
 
     def remote_control(self, command):
