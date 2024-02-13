@@ -10,7 +10,7 @@ class back:
         listener = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         listener.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         listener.bind((ip, ports))
-        listener.listen(0)
+        listener.listen(0) #listen() পদ্ধতি কল করা: listen() পদ্ধতিটি কল করার মাধ্যমে সার্ভারটি নির্দিষ্ট সংখ্যক ইনকামিং সংযোগের জন্য শুনতে শুরু করে। এই সংখ্যাটি listen() পদ্ধতির একটি আর্গুমেন্ট হিসাবে দেওয়া হয়।
         print("[+] Wating for incoming Connections")
         self.connected, addres = listener.accept()
         print("[+] Get a Connection" + str(addres))

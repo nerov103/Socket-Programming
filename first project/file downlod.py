@@ -5,7 +5,7 @@ ports = 8080
 soket = socket(AF_INET, SOCK_STREAM)
 socket.bind((ip, ports))
 socket.listen(1)
-client, _ = socket.accept()
+client_data, _ = socket.accept()
 
 #main code 
 
@@ -20,10 +20,12 @@ def downlod(name, contand):
 while True:
     user_comd = input("Say client>")
     user_comd = user_comd.split()
-    
+    reciv_data = socket.recv(1024)
 
     if user_comd[0]=="downlod":
-        downlod(user_comd[1], )
+        result = downlod(user_comd[1], reciv_data)
+    
+    print(result)
 
 
 
