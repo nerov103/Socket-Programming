@@ -1,6 +1,9 @@
 import socket
 
-ip = socket.gethostbyname("hbh.sh")
-print(ip)
+def accept():
+    ip = socket.gethostbyname(socket.gethostname())
+    print(ip)
 
 
+
+accept()

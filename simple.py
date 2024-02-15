@@ -1,6 +1,6 @@
 import socket
 
-tergat_url = "brandcurb.com"
+tergat_url = "example.com"
 
 request = f"GET / HTTP/1.1\r\nHost: {tergat_url}\n\r\n\r"
 
