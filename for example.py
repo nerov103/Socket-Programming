@@ -1,8 +1,8 @@
 import socket
 import threading
 
-port = 80
-tergat = socket.gethostbyname("430c-180-149-234-118.ngrok-free.app")
+port = 8080
+tergat = "127.0.0.1"
 face_ip = "182.21.40.65"
 
 alrody_connected = 0
