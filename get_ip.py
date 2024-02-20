@@ -1,9 +1,5 @@
 import socket
 
-def accept():
-    ip = socket.gethostbyname(socket.gethostname())
-    print(ip)
-
-
-
-accept()
+domin = input(">")
+ip_address = socket.gethostbyname(domin)
+print(ip_address)
