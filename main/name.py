@@ -5,4 +5,3 @@ def weallcome():
 
 if __name__=="__main__":
     weallcome()
-
